@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=Bubbler+One&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Monsieur+La+Doulaise&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+body{
+    background-image: url('restaurant-bg.jpg');
+    background-size: cover; /* Cover the entire page */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Do not repeat the background image */
+    background-attachment: fixed; /* This ensures the background image covers the whole page even when scrolling */
+    min-height: 100vh;
+    height: 100vh;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.48); /* Black with opacity */
+    z-index: -1;
+}
+
+.nav-btns {
+    font-family: "Montserrat", sans-serif;
+    border: none;
+    color: white;
+    font-size: 30px;
+    font-weight: 300;
+    background-color: transparent;
+    border-radius: 5px;
+    padding: 5px;
+    width: 200px;
+    transition: transform 0.3s ease;
+}
+
+.nav-btns:hover {
+    cursor: pointer;
+    transform: translateY(-10px); /* This moves the button up by 10 pixels on hover */
+}
+
+nav{
+    display: flex;
+    justify-content: center;
+    padding-right: 20px;
+    padding-top: 10px;
+    gap: 20px;
+}
+
+#content{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.inner-container {
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    border: 5px double rgba(254, 207, 105, 0.397);
+    border-radius: 5px;
+    min-height: 550px;
+    justify-content: center; /* Align to top */
+    align-items: center;
+    width: 75%;
+    margin: 20px auto; /* Added for spacing around the container */
+    padding: 10px; /* Added for spacing inside the container */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+/* Make sure the children of .inner-container do not flex-grow or flex-shrink */
+.inner-container > div {
+    flex: 0 0 auto;
+}
+
+
+#title{
+    background-color: transparent;
+    font-family: "Monsieur La Doulaise", cursive;
+    font-size: 5rem;
+    font-weight: 100;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: white;
+    display: block;
+}
+
+#welcome{
+    font-family: "Montserrat", sans-serif;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 300;
+    background-color: rgba(254, 207, 105, 0.397);
+    width: 50%;
+    padding: 30px;
+    align-self: center;
+    border-radius: 20px;
+    text-align: center;
+    
+}
+
+#call-to-action{
+    font-family: "Montserrat", sans-serif;
+    font-size: 1em;
+    padding: 5px;
+    align-self: center;
+    margin-top: 20px;
+    background-color: transparent;
+    border: 1px solid white;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#call-to-action:hover{
+    background-color: #ffffff95;
+    border-color: #ffffff95;
+    color: black;
+}
+
+.menu{
+    display: grid;
+    grid-template-columns: repeat(2, 300px);
+    grid-template-rows: repeat(5, 300px);
+    overflow: hidden;
+    gap: 70px;
+
+}
+
+img{
+    border-radius: 15px;
+    border: 2px solid rgba(254, 207, 105, 0.397);
+}
+
+.cell{
+    position: relative;
+}
+
+.overlay {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 304px;
+    width: 304px;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: rgba(0, 0, 0, 0.48);
+    border-radius: 15px;
+    text-align: center;
+    font-family: "Montserrat", sans-serif;
+    row-gap: 20px;
+}
+
+.title{
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 300;
+    background-color: rgba(254, 207, 105, 0.397);
+    width: 50%;
+    padding: 30px;
+    align-self: center;
+    border-radius: 20px;
+    text-align: center;
+    margin-top: 20px;
+    color: white;
+
+}
+
+.overlay p{
+    padding-left: 20px;
+    padding-right: 20px;
+    color: white;
+}
+
+.cell:hover .overlay {
+    opacity: 1;
+}
+
